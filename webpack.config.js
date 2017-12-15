@@ -1,0 +1,23 @@
+var path=require('path');
+module.exports={
+	devtool:'',
+	entry:'./src/main.js',
+	output:{
+		path:path.resolve(__dirname,'./build'),
+		filename:'index.js'
+	},
+	module:{
+		rules:[
+			{
+				test:/\.(js|jsx)$/,
+				exclude:/node_modules/,
+				use:[{
+						loader:'babel-loader'
+					}]
+			}
+		]
+	},
+	resolve:{
+		extensions:['.js','.jsx','.css','.scss']
+	}
+}
